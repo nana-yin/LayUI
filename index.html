@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LayUI学习</title>
+    <!-- 引入layui css -->
+    <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui-v2.5.6/css/layui.css" />
+    <!-- 引入layui js -->
+    <script src="https://www.layuicdn.com/layui-v2.5.6/layui.js"></script>
+    <!-- 引入css -->
+    <link rel="stylesheet" type="text/css" href="./src/css/index.css"/>
+</head>
+<body>
+    <!-- 这就是一个页面了，如果需要路径切换之后跳转到别的页面，就需要再新建一个html文件 -->
+    <div id="app">
+        <!-- 使用表单 -->
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">范围</label>
+                <div class="layui-input-inline" style="width: 100px;">
+                <input type="text" name="price_min" placeholder="￥" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid">-</div>
+                <div class="layui-input-inline" style="width: 100px;">
+                <input type="text" name="price_max" placeholder="￥" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            
+            <div class="layui-inline">
+                <label class="layui-form-label">密码</label>
+                <div class="layui-input-inline" style="width: 100px;">
+                <input type="password" name="" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <button lay-submit lay-filter="*">提交</button>    
+        </div>
+        <!-- 使用表格 -->
+        <table class="layui-table">
+            <colgroup>
+                <col width="150">
+                <col width="200">
+                <col>
+            </colgroup>
+            <thead>
+                <tr>
+                <th>昵称</th>
+                <th>加入时间</th>
+                <th>签名</th>
+                </tr> 
+            </thead>
+            <tbody>
+                <tr>
+                <td>贤心</td>
+                <td>2016-11-29</td>
+                <td>人生就像是一场修行</td>
+                </tr>
+                <tr>
+                <td>许闲心</td>
+                <td>2016-11-28</td>
+                <td>于千万人之中遇见你所遇见的人，于千万年之中，时间的无涯的荒野里…</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // 第一步，配置入口文件
+        layui.config({
+            base: './src/', // 存放模块的目录
+            version: Date.parse(new Date()), // 浏览器不缓存
+            debug: true, // 开启调试模式
+        }).use('index'); // 加载入口./modules/index.js
+    </script>
+</body>
+</html>
